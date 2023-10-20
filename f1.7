@@ -1,0 +1,10 @@
+def has_double_threes(numbers):
+    for i in range(len(numbers) - 1):
+        if numbers[i] == 3 and numbers[i+1] == 3:
+            return True
+    return False
+
+user_input = input("Enter a list of numbers separated by spaces: ")
+input_numbers = list(map(int, user_input.split()))
+result = has_double_threes(input_numbers)
+print("Has double threes:", result)

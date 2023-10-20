@@ -1,0 +1,41 @@
+movies = [
+    {
+        "name": "Usual Suspects", 
+        "imdb": 7.0,
+        "category": "Thriller"
+    },
+    {
+        "name": "Hitman",
+        "imdb": 6.3,
+        "category": "Action"
+    },
+    {
+        "name": "Dark Knight",
+        "imdb": 9.0,
+        "category": "Adventure"
+    },
+    {
+        "name": "The Help",
+        "imdb": 8.0,
+        "category": "Drama"
+    },
+  
+]
+
+def filter_movies_by_category(movies_list, category_name):
+    result = []
+    for movie in movies_list:
+        if movie["category"].lower() == category_name.lower():
+            result.append(movie)
+    return result
+
+category_name = input("Enter a category name: ")
+
+filtered_movies = filter_movies_by_category(movies, category_name)
+
+if filtered_movies:
+    print(f"Movies in the '{category_name}' category:")
+    for movie in filtered_movies:
+        print(f"{movie['name']} - IMDb: {movie['imdb']}")
+else:
+    print(f"No movies found in the '{category_name}' category.")

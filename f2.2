@@ -1,0 +1,38 @@
+movies = [
+    {
+        "name": "Usual Suspects", 
+        "imdb": 7.0,
+        "category": "Thriller"
+    },
+    {
+        "name": "Hitman",
+        "imdb": 6.3,
+        "category": "Action"
+    },
+    {
+        "name": "Dark Knight",
+        "imdb": 9.0,
+        "category": "Adventure"
+    },
+    {
+        "name": "The Help",
+        "imdb": 8.0,
+        "category": "Drama"
+    },
+   
+]
+
+def filter_movies_by_imdb_rating(movies_list):
+    result = []
+    for movie in movies_list:
+        if movie["imdb"] > 5.5:
+            result.append(movie)
+    return result
+
+filtered_movies = filter_movies_by_imdb_rating(movies)
+
+if filtered_movies:
+    for movie in filtered_movies:
+        print(f"{movie['name']} - IMDb: {movie['imdb']}")
+else:
+    print("No movies with IMDb ratings above 5.5 found.")

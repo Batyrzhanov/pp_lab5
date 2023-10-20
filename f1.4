@@ -1,0 +1,22 @@
+def is_prime_number(number):
+    if number <= 1:
+        return False
+    if number <= 3:
+        return True
+    if number % 2 == 0 or number % 3 == 0:
+        return False
+    divisor = 5
+    while divisor * divisor <= number:
+        if number % divisor == 0 or number % (divisor + 2) == 0:
+            return False
+        divisor += 6
+    return True
+
+def find_prime_numbers(number_list):
+    return [num for num in number_list if is_prime_number(num)]
+
+user_input = input("Enter a list of numbers separated by spaces: ")
+input_numbers = list(map(int, user_input.split()))
+prime_numbers = find_prime_numbers(input_numbers)
+print("Prime numbers in the list:", prime_numbers)
+

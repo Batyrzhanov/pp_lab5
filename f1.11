@@ -1,0 +1,9 @@
+def is_palindrome(input_string):
+    return input_string == input_string[::-1]
+
+user_input = input("Enter a string: ")
+
+if is_palindrome(user_input):
+    print('Yes, it's a palindrome!')
+else:
+    print('No, it's not a palindrome.')

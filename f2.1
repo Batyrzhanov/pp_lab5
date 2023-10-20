@@ -1,0 +1,42 @@
+movies = [
+    {
+        "name": "Usual Suspects", 
+        "imdb": 7.0,
+        "category": "Thriller"
+    },
+    {
+        "name": "Hitman",
+        "imdb": 6.3,
+        "category": "Action"
+    },
+    {
+        "name": "Dark Knight",
+        "imdb": 9.0,
+        "category": "Adventure"
+    },
+    {
+        "name": "The Help",
+        "imdb": 8.0,
+        "category": "Drama"
+    },
+   
+]
+
+def is_above_5_5(movie):
+    return movie["imdb"] > 5.5
+
+movie_name = input("Enter a movie name: ")
+
+found_movie = None
+for movie in movies:
+    if movie["name"] == movie_name:
+        found_movie = movie
+        break
+
+if found_movie is not None:
+    if is_above_5_5(found_movie):
+        print("The movie is in the list and has an IMDb rating above 5.5.")
+    else:
+        print("The movie is in the list, but its IMDb rating is not above 5.5.")
+else:
+    print("The movie is not in the list.")

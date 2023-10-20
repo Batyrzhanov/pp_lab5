@@ -1,0 +1,7 @@
+def draw_histogram(numbers):
+    for num in numbers:
+        print('*' * num)
+
+user_input = input("Enter a list of numbers separated by spaces: ")
+input_numbers = [int(item) for item in user_input.split()]
+draw_histogram(input_numbers)
